@@ -129,7 +129,7 @@ services:
      - /opt/tpot/etc/compose/elk_environment
     ports:
      - "9210:9210"
-    image: "dtagdevsec/logstash:1710"
+    image: "sy14r/logstash-lumberjack-receiver:firsttry"
     volumes:
      - /data:/data
      - /var/log:/data/host/log
