@@ -89,6 +89,8 @@ services:
     restart: always
     env_file:
      - /opt/tpot/etc/compose/elk_environment
+    environment:
+     - SERVER_IP="127.0.0.1"
     image: "sy14r/logstash-lumberjack-sender:firsttry"
     volumes:
      - /data:/data
