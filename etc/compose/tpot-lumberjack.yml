@@ -133,6 +133,7 @@ services:
     volumes:
      - /data:/data
      - /var/log:/data/host/log
+     - /opt/tpot/etc/certs:/etc/logstash/certs
 
 ## Elasticsearch-head service
   head:
