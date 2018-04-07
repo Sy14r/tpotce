@@ -11,4 +11,4 @@ cd /etc/listbot
 git pull
 cd /
 
-sed -i /etc/logstash/conf.d/logstash.conf -e 's/127.0.0.1/$SERVER_IP/g'
+sed -i /etc/logstash/conf.d/logstash.conf -e "s/CENTRAL_SERVER_IP/$SERVER_IP/g"
