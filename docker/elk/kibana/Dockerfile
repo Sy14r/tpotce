@@ -30,6 +30,7 @@ RUN apk -U upgrade && \
     cp create_kibana_index.js /usr/share/kibana/src/core_plugins/elasticsearch/lib/ && \
     cp global_nav.less /usr/share/kibana/src/ui/public/chrome/directives/global_nav/global_nav.less && \
     cp global_nav_link.less /usr/share/kibana/src/ui/public/chrome/directives/global_nav/global_nav_link/global_nav_link.less && \
+    cp colors.less /usr/share/kibana/src/core_plugins/metrics/public/visualizations/less/includes/colors.less && \
     cd / && \
 
 # Setup user, groups and configs
