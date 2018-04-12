@@ -28,6 +28,8 @@ RUN apk -U upgrade && \
     cp elk.ico /usr/share/kibana/src/ui/public/assets/favicons/favicon-16x16.png && \
     cp elk.ico /usr/share/kibana/src/ui/public/assets/favicons/favicon-32x32.png && \
     cp create_kibana_index.js /usr/share/kibana/src/core_plugins/elasticsearch/lib/ && \
+    cp global_nav.less /usr/share/kibana/src/ui/public/chrome/directives/global_nav/global_nav.less && \
+    cp global_nav_link.less /usr/share/kibana/src/ui/public/chrome/directives/global_nav/global_nav_link/global_nav_link.less && \
     cd / && \
 
 # Setup user, groups and configs
