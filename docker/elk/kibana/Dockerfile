@@ -31,6 +31,7 @@ RUN apk -U upgrade && \
     cp global_nav.less /usr/share/kibana/src/ui/public/chrome/directives/global_nav/global_nav.less && \
     cp global_nav_link.less /usr/share/kibana/src/ui/public/chrome/directives/global_nav/global_nav_link/global_nav_link.less && \
     cp colors.less /usr/share/kibana/src/core_plugins/metrics/public/visualizations/less/includes/colors.less && \
+    cp main.less /usr/share/kibana/src/core_plugins/metrics/public/less/main.less && \
     cd / && \
 
 # Setup user, groups and configs
@@ -39,6 +40,8 @@ RUN apk -U upgrade && \
     sed -i 's/#server.host: "localhost"/server.host: "0.0.0.0"/' /usr/share/kibana/config/kibana.yml && \
     sed -i 's/#elasticsearch.url: "http:\/\/localhost:9200"/elasticsearch.url: "http:\/\/elasticsearch:9200"/' /usr/share/kibana/config/kibana.yml && \
     /usr/share/kibana/bin/kibana 2>&1 | grep -m 1 "Optimization of bundles" && \
+    sed -i /usr/share/kibana/optimize/bundles/commons.style.css -e 's/e8488b/f60/g' -e 's/ff95c1/f6770f/g' && \
+    sed -i /usr/share/kibana/optimize/bundles/kibana.style.css -e 's/e8488b/f60/g' && \
     addgroup -g 2000 kibana && \
     adduser -S -H -s /bin/bash -u 2000 -D -g 2000 kibana && \
     chown -R kibana:kibana /usr/share/kibana/ && \
