@@ -16,7 +16,7 @@ services:
     restart: always
     environment:
      - bootstrap.memory_lock=true
-     - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+     - "ES_JAVA_OPTS=-Xms1g -Xmx1g"
     cap_add:
      - IPC_LOCK
     ulimits:
